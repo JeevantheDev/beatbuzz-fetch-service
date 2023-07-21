@@ -69,8 +69,6 @@ module.exports = {
         },
       });
 
-      console.log('playlist::', playlist, playlistId);
-
       if (playlist) {
         const { songs } = playlist;
 
