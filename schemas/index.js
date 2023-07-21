@@ -1,6 +1,6 @@
 module.exports = `#graphql
   type Song {
-    user_id: Int!
+    user_id: ID!
     id: String!
     audio: String!
     keywords: [String]!
@@ -22,7 +22,7 @@ module.exports = `#graphql
   }
 
   type Playlist {
-    user_id: Int!
+    user_id: ID!
     id: Int!
     title: String!
     thumbnail: String!
