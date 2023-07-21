@@ -2,7 +2,7 @@
 
 const VideoChannelModel = (sequelize, DataTypes) => {
   const VideoChannel = sequelize.define(
-    "videoChannel",
+    'videoChannel',
     {
       videoChannelId: {
         type: DataTypes.STRING(2048),
@@ -19,13 +19,13 @@ const VideoChannelModel = (sequelize, DataTypes) => {
         allowNull: false,
       },
     },
-    { timestamps: true }
+    { timestamps: true, freezeTableName: true }
   );
 
   VideoChannel.associate = (models) => {
     console.log(models);
     VideoChannel.hasOne(models.song, {
-      foreignKey: "videoChannelId",
+      foreignKey: 'videoChannelId',
     });
   };
 

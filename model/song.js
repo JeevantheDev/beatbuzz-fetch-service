@@ -2,7 +2,7 @@
 
 const SongModel = (sequelize, DataTypes) => {
   const Song = sequelize.define(
-    "song",
+    'song',
     {
       user_id: {
         type: DataTypes.INTEGER,
@@ -44,12 +44,12 @@ const SongModel = (sequelize, DataTypes) => {
         allowNull: false,
       },
     },
-    { timestamps: true }
+    { timestamps: true, freezeTableName: true }
   );
 
   Song.associate = (models) => {
     Song.belongsTo(models.videoChannel, {
-      foreignKey: "videoChannelId",
+      foreignKey: 'videoChannelId',
     });
   };
 

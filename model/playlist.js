@@ -2,7 +2,7 @@
 
 const PlaylistModel = (sequelize, DataTypes) => {
   const Playlist = sequelize.define(
-    "playlist",
+    'playlist',
     {
       user_id: {
         type: DataTypes.INTEGER,
@@ -28,7 +28,7 @@ const PlaylistModel = (sequelize, DataTypes) => {
         allowNull: false,
       },
     },
-    { timestamps: true }
+    { timestamps: true, freezeTableName: true }
   );
 
   return Playlist;

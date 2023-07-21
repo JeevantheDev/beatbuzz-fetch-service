@@ -1,10 +1,10 @@
-require("dotenv").config();
-const express = require("express");
-const cookieParser = require("cookie-parser");
-const { startStandaloneServer } = require("@apollo/server/standalone");
+require('dotenv').config();
+const express = require('express');
+const cookieParser = require('cookie-parser');
+const { startStandaloneServer } = require('@apollo/server/standalone');
 
-const db = require("./model");
-const server = require("./server");
+const db = require('./model');
+const server = require('./server');
 
 const app = express();
 
@@ -17,7 +17,7 @@ const apolloServer = server();
 
 const startServer = async () => {
   db.sequelize.sync({ force: false }).then(() => {
-    console.log("DB has been re sync");
+    console.log('DB has been re sync');
   });
 
   const PORT = 7996;
