@@ -23,7 +23,7 @@ module.exports = `#graphql
 
   type Playlist {
     user_id: ID!
-    id: ID!
+    id: Int!
     title: String!
     thumbnail: String!
     songs: [String]!
