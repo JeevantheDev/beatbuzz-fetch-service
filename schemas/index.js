@@ -23,7 +23,7 @@ module.exports = `#graphql
 
   type Playlist {
     user_id: ID!
-    id: ID!
+    id: Float!
     title: String!
     thumbnail: String!
     songs: [String]!
@@ -35,8 +35,8 @@ module.exports = `#graphql
     allPlaylistsByUser: [Playlist]!
     getSong(songId: String!): Song
     getSongByChannel(channelId: String!): [Song!]!
-    getPlaylist(playlistId: ID!): Playlist!
-    getSongByPlaylist(playlistId: ID!): [Song!]!
+    getPlaylist(playlistId: Float!): Playlist!
+    getSongByPlaylist(playlistId: Float!): [Song!]!
     getSongByUser: [Song!]!
   }
 `;
