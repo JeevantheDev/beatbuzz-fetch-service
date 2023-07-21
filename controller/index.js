@@ -1,5 +1,5 @@
-const db = require("../model");
-const jwt = require("jsonwebtoken");
+const db = require('../model');
+const jwt = require('jsonwebtoken');
 
 const Songs = db.songs;
 const VideoChannels = db.videoChannels;
@@ -68,6 +68,8 @@ module.exports = {
           user_id: userInfo.id,
         },
       });
+
+      console.log('playlist::', playlist);
 
       if (playlist) {
         const { songs } = playlist;
