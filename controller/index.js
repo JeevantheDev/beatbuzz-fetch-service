@@ -64,12 +64,12 @@ module.exports = {
 
       const playlist = await Playlists.findOne({
         where: {
-          id: playlistId,
+          id: Number(playlistId),
           user_id: userInfo.id,
         },
       });
 
-      console.log('playlist::', playlist);
+      console.log('playlist::', playlist, typeof playlistId);
 
       if (playlist) {
         const { songs } = playlist;
