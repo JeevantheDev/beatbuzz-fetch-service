@@ -64,7 +64,7 @@ module.exports = {
 
       const playlist = await Playlists.findOne({
         where: {
-          id: Number(playlistId),
+          id: playlistId,
           user_id: userInfo.id,
         },
       });
