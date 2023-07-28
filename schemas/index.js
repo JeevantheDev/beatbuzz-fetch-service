@@ -30,6 +30,7 @@ module.exports = `#graphql
   }
 
   type Query {
+    searchSongs(searchQuery: String!): [Song!]!
     allSongs: [Song!]!
     allChannels: [Channel!]!
     allPlaylistsByUser: [Playlist]!

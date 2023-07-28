@@ -1,5 +1,6 @@
 const db = require('../model');
 const jwt = require('jsonwebtoken');
+const { Op } = require('sequelize');
 
 const Songs = db.songs;
 const VideoChannels = db.videoChannels;
@@ -9,6 +10,20 @@ module.exports = {
   Query: {
     allSongs: () => {
       return Songs.findAll();
+    },
+    searchSongs: (root, { searchQuery }) => {
+      console.log(searchQuery);
+      return Songs.findAll({
+        where: {
+          [Op.or]: [
+            {
+              videoTitle: {
+                [Op.like]: `%${searchQuery}%`,
+              },
+            },
+          ],
+        },
+      });
     },
     allChannels: () => {
       return VideoChannels.findAll();
